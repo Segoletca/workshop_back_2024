@@ -1,9 +1,12 @@
+'''
+Файл для представлений, то есть классов или функций, в которых мы прописываем то,
+как будет обрабатываться запрос, который мы описываем тем или иным классом (функцией)
+'''
 from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
-
 
 from .serializers import *
 

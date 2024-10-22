@@ -1,3 +1,7 @@
+'''
+Файл, для описания того, как будут выглядеть наши модели
+во встроенной админ панели джанго
+'''
 from django.contrib import admin
 from .models import Author, Book
 

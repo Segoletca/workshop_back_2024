@@ -1,3 +1,8 @@
+'''
+Файл с url шаблонами для нашего приложения, содержит адреса, по которым
+клиенты могут обращаться к сервису. В списке urlpatterns связываются
+определенные маршруты с классами (функциями) представлений
+'''
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
