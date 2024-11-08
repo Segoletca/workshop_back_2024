@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/Users/mymac_1/Library/Caches/pypoetry/virtualenvs/workshop-back-2024-KC7XRBgy-py3.10
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

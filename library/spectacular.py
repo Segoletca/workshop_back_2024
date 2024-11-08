@@ -1,5 +1,5 @@
 '''
-Файл для настройки пудей для документации OpenAPI
+Файл для настройки путей для документации OpenAPI
 '''
 from django.urls import path
 from drf_spectacular.views import (
