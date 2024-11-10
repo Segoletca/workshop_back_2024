@@ -10,7 +10,7 @@ class AuthorAdmin(admin.ModelAdmin):
     '''
     Класс админ панели для модели Авторов
     '''
-    list_display = ('id', 'name')
+    list_display = ('id', 'name',)
     search_fields = ('name',)
     list_filter = ('name',)
     ordering = ('name',)

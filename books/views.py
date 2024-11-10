@@ -11,6 +11,7 @@ from rest_framework.viewsets import ModelViewSet
 from .serializers import *
 
 
+
 class AuthorAPIView(APIView):
     '''
     Класс, в котором все операции над нашими данными пишутся вручную
