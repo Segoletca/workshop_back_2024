@@ -20,11 +20,12 @@ class BookAdmin(admin.ModelAdmin):
     '''
     Класс админ панели для модели Книг
     '''
-    list_display = ('title', 'author__name') # Через __ мы можем обращаться к полям связанной модели
-    search_fields = ('title', 'author__name') # В нашем случае мы обращаемся в полю name модели Author
-    list_filter = ('author', )
+    list_display = ('title', 'author__name')  # Через __ мы можем обращаться к полям связанной модели
+    search_fields = ('title', 'author__name')  # В нашем случае мы обращаемся в полю name модели Author
+    list_filter = ('author',)
     ordering = ('title',)
 
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)
+# admin.site.register(Magazine, MagazineAdmin)
