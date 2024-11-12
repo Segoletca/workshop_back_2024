@@ -19,4 +19,3 @@ class Author(models.Model):
     Описание модели книг, то есть представление таблицы из базы данных в Python
     '''
     name = models.CharField(max_length=100)
-    
