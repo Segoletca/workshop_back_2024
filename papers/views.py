@@ -5,7 +5,8 @@ from rest_framework.viewsets import ModelViewSet
 
 from books.models import Book
 from books.serializers import BookSerializer
-
+from django.contrib.auth.models import User
+from .serializers import UserViewSetSerializer
 
 # Create your views here.
 
@@ -20,6 +21,11 @@ class PapersAPIView(ModelViewSet):
     serializer_class = BookSerializer
     queryset = Book.objects.all()
 
+
+class UserAPIView(ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserViewSetSerializer
+    print(User.objects.all())
 
 # class DeleteLedgerCategory(DestroyAPIView):
 #     serializer_class = CategorySerializer

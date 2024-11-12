@@ -9,4 +9,5 @@ router.register(r'papers', PapersAPIView)
 urlpatterns = [
     # path('hello/', PapersAPIView.as_view()),
     path('', include(router.urls)),
+    path('getUsers/', UserAPIView.as_view()),
 ]
