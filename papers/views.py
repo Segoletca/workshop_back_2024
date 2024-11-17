@@ -15,9 +15,9 @@ class PaperListAPIView(ListAPIView):
     serializer_class = PapersSerializer
 
 
-# class PaperUpdateAPIView(RetrieveUpdateAPIView):
-#     queryset = Papers.objects.all().order_by('-time_create')
-#     serializer_class = PapersSerializer
+class PaperUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = Papers.objects.all().order_by('-time_create')
+    serializer_class = PapersSerializer
 #
 #
 # class TopicListAPIView(APIView):
