@@ -7,8 +7,7 @@ from django.contrib.auth.models import User
 
 class Papers(models.Model):
     title = models.CharField(max_length=255)
-    author = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE,
-                               null=True)
+    author = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
     content = models.TextField(max_length=2500)
     time_create = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
