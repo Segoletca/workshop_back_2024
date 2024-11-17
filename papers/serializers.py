@@ -6,7 +6,8 @@ from .models import Papers
 class PapersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Papers
-        fields = '__all__'
+        fields = ['title', 'author', 'content', 'time_create', 'category']
+        display_field = 'category__name'
 
 
 class CreatePaperSerializer(serializers.ModelSerializer):
@@ -14,4 +15,5 @@ class CreatePaperSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Papers
-        fields = '__all__'
+        fields = ['title', 'author', 'content', 'time_create', 'category']
+        display_field = 'category__name'
