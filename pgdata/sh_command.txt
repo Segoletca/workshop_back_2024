@@ -1,4 +1,0 @@
-docker run -d --name postgres -e POSTGRES_PASSWORD=mysecretpassword \
--e PGDATA=/Users/mymac_1/Documents/python_projects/workshop_back_2024/pgdata \
--v /Users/mymac_1/Documents/python_projects/workshop_back_2024/pgdata:/var/lib/postgresql/data \
--p 5432:5432 postgres:13.16
