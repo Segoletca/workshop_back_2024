@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from rest_framework import status
@@ -29,12 +30,17 @@ class PaperUpdateAPIView(RetrieveUpdateDestroyAPIView):
     permission_classes = (IsOwnerOrReadOnly,)
 
 
-class TopicListAPIView(APIView):
-    def get(self, request, category=None):
+class FilterListAPIView(APIView):
+    def get(self, request, category=None, author=None):
         try:
-            category = Category.objects.get(id=category)
-            papers = Papers.objects.filter(category=category)
+            if category:
+                category = Category.objects.get(id=category)
+                papers = Papers.objects.filter(category=category).order_by('-time_create')
+            if author:
+                author = User.objects.get(id=author)
+                papers = Papers.objects.filter(author=author).order_by('-time_create')
+
             serializer = PapersSerializer(papers, many=True)
             return Response(serializer.data)
         except ObjectDoesNotExist:
-            return Response({"error": "Category not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Object not found"}, status=status.HTTP_404_NOT_FOUND)
