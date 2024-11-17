@@ -18,14 +18,14 @@ class PaperListAPIView(ListAPIView):
 class PaperUpdateAPIView(RetrieveUpdateAPIView):
     queryset = Papers.objects.all().order_by('-time_create')
     serializer_class = PapersSerializer
-#
-#
-# class TopicListAPIView(APIView):
-#     def get(self, request, category=None):
-#         try:
-#             category = Category.objects.get(id=category)
-#             papers = Papers.objects.filter(category=category)
-#             serializer = PapersSerializer(papers, many=True)
-#             return Response(serializer.data)
-#         except ObjectDoesNotExist:
-#             return Response({"error": "Category not found"}, status=status.HTTP_404_NOT_FOUND)
+
+
+class TopicListAPIView(APIView):
+    def get(self, request, category=None):
+        try:
+            category = Category.objects.get(id=category)
+            papers = Papers.objects.filter(category=category)
+            serializer = PapersSerializer(papers, many=True)
+            return Response(serializer.data)
+        except ObjectDoesNotExist:
+            return Response({"error": "Category not found"}, status=status.HTTP_404_NOT_FOUND)
