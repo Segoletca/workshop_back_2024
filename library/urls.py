@@ -22,7 +22,7 @@ from .spectacular import urlpatterns as spectacular
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/books/', include('books.urls')),
+    # path('api/books/', include('books.urls')),
     path('api/papers/', include('papers.urls'))
 ] + spectacular
 

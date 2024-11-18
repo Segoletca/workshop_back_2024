@@ -1,9 +1,0 @@
-'''
-Файл настроек нашего приложения (его лучше не трогать)
-'''
-from django.apps import AppConfig
-
-
-class BooksConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'books'
