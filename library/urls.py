@@ -21,6 +21,7 @@ from .spectacular import urlpatterns as spectacular
 
 
 urlpatterns = [
+    path('drf-auth/', include('rest_framework.urls')),  # Авторизация
     path('admin/', admin.site.urls),
     # path('api/books/', include('books.urls')),
     path('api/papers/', include('papers.urls'))
